@@ -10,4 +10,4 @@ services:
                         - 8080:8080
                 environment:
                         ZOO_MY_ID: 2
-                        ZOO_SERVERS: server.1=192.168.1.35:2888:3888;2181 server.2=192.168.1.21:2888:3888;2181 server.3=192.168.1.28:2888:3888;2181
+                        ZOO_SERVERS: server.1=desktop-5osreke.broadband:2888:3888;2181 server.2=linuxserver.broadband:2888:3888;2181 server.3=windowsserver.broadband:2888:3888;2181
