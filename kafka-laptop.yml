@@ -1,4 +1,4 @@
-version: '3.9'
+#version: '1'
 services:
         zookeeper:
                 image: zookeeper
@@ -10,4 +10,4 @@ services:
                         - 8080:8080
                 environment:
                         ZOO_MY_ID: 1
-                        ZOO_SERVERS: server.1=desktop-5osreke.broadband:2888:3888;2181 server.2=linuxserver.broadband:2888:3888;2181 server.3=windowsserver.broadband:2888:3888;2181
+                        ZOO_SERVERS: server.1=desktop-5osreke.broadband:2888:3888;2181 server.2=windowsserver.broadband:2888:3888;2181
