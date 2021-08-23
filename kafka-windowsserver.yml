@@ -8,7 +8,23 @@ services:
                         - 2888:2888
                         - 3888:3888
                         - 8080:8080
+                volumes:
+                        - f:/zookeeper:/bitnami/zookeeper
                 environment:
                         ALLOW_ANONYMOUS_LOGIN: "true"
                         ZOO_SERVER_ID: 1
                         ZOO_SERVERS: 192.168.1.28:2888:3888
+        kafka:
+                container_name: kafka-1
+                image: bitnami/kafka
+                restart: always
+                ports:
+                        - 9092:9092
+                volumes:
+                        - f:/kafka:/bitnami/kafka
+                environment:
+                        KAFKA_BROKER_ID: 1
+                        KAFKA_CFG_LISTENERS: PLAINTEXT://:9092
+                        KAFKA_CFG_ADVERTISED_LISTENERS: PLAINTEXT://:9092
+                        KAFKA_CFG_ZOOKEEPER_CONNECT: 192.168.1.35:2181
+                        ALLOW_PLAINTEXT_LISTENER: "true"
