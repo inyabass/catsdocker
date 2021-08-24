@@ -7,5 +7,5 @@ docker rm zookeeper-1
 rm -fR /$2/zookeeper/*
 rm -fR /$2/kafka/*
 ./kafka.sh $1
-sleep 1
-./create-topics.sh
+sleep 2
+./create-topics.sh $1
