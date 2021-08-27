@@ -1,0 +1,12 @@
+services:
+  couchdb:
+    container_name: couchdb-1
+    image: couchdb
+    restart: always
+    ports:
+      - 5984:5984
+    volumes:
+      - c:/couchdb:/opt/couchdb/data
+    environment:
+      COUCHDB_USER: admin
+      COUCHDB_PASSWORD: xq2um8g0
