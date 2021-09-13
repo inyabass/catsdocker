@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
-# $1 = machine $2 = disk
-docker stop couchdb-1
+. library.sh
+docker stop $COUCHDB_CONTAINER_NAME

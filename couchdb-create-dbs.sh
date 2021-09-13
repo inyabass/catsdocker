@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
-# $1 = Server
-curl -X PUT http://admin:xq2um8g0@$1.broadband:5984/_global_changes
-curl -X PUT http://admin:xq2um8g0@$1.broadband:5984/_replicator
-curl -X PUT http://admin:xq2um8g0@$1.broadband:5984/_users
-curl -X PUT http://admin:xq2um8g0@$1.broadband:5984/cats
+. library.sh
+curl -X PUT http://$COUCHDB_USER:$COUCHDB_PASSWORD@$HOST_MACHINE:5984/_global_changes
+curl -X PUT http://$COUCHDB_USER:$COUCHDB_PASSWORD@$HOST_MACHINE:5984/_replicator
+curl -X PUT http://$COUCHDB_USER:$COUCHDB_PASSWORD@$HOST_MACHINE:5984/_users
+curl -X PUT http://$COUCHDB_USER:$COUCHDB_PASSWORD@$HOST_MACHINE:5984/cats
+curl -X PUT http://$COUCHDB_USER:$COUCHDB_PASSWORD@$HOST_MACHINE:5984/catsconfig

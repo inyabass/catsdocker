@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
-# $1 = Server
-docker exec -it kafka-1 kafka-topics.sh --create --zookeeper $1.broadband:2181 --replication-factor 1 --partitions 1 --topic test-request
-docker exec -it kafka-1 kafka-topics.sh --create --zookeeper $1.broadband:2181 --replication-factor 1 --partitions 1 --topic test-response
+docker exec -it kafka kafka-topics.sh --create --zookeeper desktop-5osreke.broadband:2181 --replication-factor 1 --partitions 1 --topic test-request
+docker exec -it kafka kafka-topics.sh --create --zookeeper desktop-5osreke.broadband:2181 --replication-factor 1 --partitions 1 --topic test-response
+sleep 2
+docker exec -it kafka kafka-configs.sh --bootstrap-server desktop-5osreke.broadband:9092 --topic test-request --alter --add-config retention.ms=86400
+docker exec -it kafka kafka-configs.sh --bootstrap-server desktop-5osreke.broadband:9092 --topic test-response --alter --add-config retention.ms=86400

@@ -1,3 +1,8 @@
 #!/usr/bin/env bash
-# $1 = machine $2 = disk
-./kafka-compose.sh $1
+export KAFKA_BROKER_ID=1
+export KAFKA_CFG_LISTENERS="PLAINTEXT://:9092"
+export KAFKA_CFG_ADVERTISED_LISTENERS="PLAINTEXT://desktop-5osreke.broadband:9092"
+export KAFKA_CFG_ZOOKEEPER_CONNECT="desktop-5osreke.broadband:2181"
+export ALLOW_PLAINTEXT_LISTENER=true
+export KAFKA_CFG_DELETE_TOPIC_ENABLE=true
+docker run --name kafka -d --rm -p 9092:9092 -v c:/kafka:/bitnami/kafka -e KAFKA_BROKER_ID -e KAFKA_CFG_LISTENERS -e KAFKA_CFG_ADVERTISED_LISTENERS -e KAFKA_CFG_ZOOKEEPER_CONNECT -e ALLOW_PLAINTEXT_LISTENER -e KAFKA_CFG_DELETE_TOPIC_ENABLE bitnami/kafka:latest
