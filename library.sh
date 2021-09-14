@@ -23,9 +23,9 @@ case "$1" in
     windowsserver)
         HOST_MACHINE="$HOST_MACHINE_WINDOWSSERVER"
         HOST_IP_ADDRESS="$HOST_MACHINE_WINDOWSSERVER_IP_ADDRESS"
-        COUCHDB_STORAGE_VOLUME="d:/couchdb"
-        ZOOKEEPER_STORAGE_VOLUME="d:/zookeeper"
-        KAFKA_STORAGE_VOLUME="d:/kafka"
+        COUCHDB_STORAGE_VOLUME="f:/couchdb"
+        ZOOKEEPER_STORAGE_VOLUME="f:/zookeeper"
+        KAFKA_STORAGE_VOLUME="f:/kafka"
         ;;
     linuxserver)
         HOST_MACHINE="$HOST_MACHINE_LINUXSERVER"
