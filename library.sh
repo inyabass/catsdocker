@@ -1,4 +1,12 @@
 #!/usr/bin/env bash
+HOST_MACHINE_DESKTOP="desktop-5osreke.broadband"
+HOST_MACHINE_WINDOWSSERVER="windowsserver.broadband"
+HOST_MACHINE_LINUXSERVER="linuxserver.broadband"
+HOST_MACHINE_DOTMATICSLAPTOP="uk-bis-lap-301.broadband"
+HOST_MACHINE_DESKTOP_IP_ADDRESS="192.168.1.35"
+HOST_MACHINE_WINDOWSSERVER_IP_ADDRESS="192.168.1.28"
+HOST_MACHINE_LINUXSERVER_IP_ADDRESS="192.168.1.21"
+HOST_MACHINE_DOTMATICSLAPTOP_IP_ADDRESS="192.168.1.191"
 if [ -z "$1" ]
 then
     echo "Must specify host"
@@ -6,35 +14,35 @@ then
 fi
 case "$1" in
     desktop)
-        HOST_MACHINE="desktop-5osreke.broadband"
-        HOST_IP_ADDRESS="192.168.1.35"
+        HOST_MACHINE="$HOST_MACHINE_DESKTOP"
+        HOST_IP_ADDRESS="$HOST_MACHINE_DESKTOP_IP_ADDRESS"
         COUCHDB_STORAGE_VOLUME="c:/couchdb"
         ZOOKEEPER_STORAGE_VOLUME="c:/zookeeper"
         KAFKA_STORAGE_VOLUME="c:/kafka"
         ;;
     windowsserver)
-        HOST_MACHINE="windowsserver.broadband"
-        HOST_IP_ADDRESS="192.168.1.28"
+        HOST_MACHINE="$HOST_MACHINE_WINDOWSSERVER"
+        HOST_IP_ADDRESS="$HOST_MACHINE_WINDOWSSERVER_IP_ADDRESS"
         COUCHDB_STORAGE_VOLUME="d:/couchdb"
         ZOOKEEPER_STORAGE_VOLUME="d:/zookeeper"
         KAFKA_STORAGE_VOLUME="d:/kafka"
         ;;
     linuxserver)
-        HOST_MACHINE="linuxserver.broadband"
-        HOST_IP_ADDRESS="192.168.1.21"
-        COUCHDB_STORAGE_VOLUME="/opt/couchdb/data"
-        ZOOKEEPER_STORAGE_VOLUME="/opt/zookeeper"
-        KAFKA_STORAGE_VOLUME="/opt/kafka"
+        HOST_MACHINE="$HOST_MACHINE_LINUXSERVER"
+        HOST_IP_ADDRESS="$HOST_MACHINE_LINUXSERVER_IP_ADDRESS"
+        COUCHDB_STORAGE_VOLUME="/mnt/storage/couchdb"
+        ZOOKEEPER_STORAGE_VOLUME="/mnt/storage/zookeeper"
+        KAFKA_STORAGE_VOLUME="/mnt/storage/kafka"
         ;;
     dotmaticslaptop)
-        HOST_MACHINE="uk-bis-lap-301.broadband"
-        HOST_IP_ADDRESS="192.168.1.191"
+        HOST_MACHINE="$HOST_MACHINE_DOTMATICSLAPTOP"
+        HOST_IP_ADDRESS="$HOST_MACHINE_DOTMATICSLAPTOP_IP_ADDRESS"
         COUCHDB_STORAGE_VOLUME="c:/couchdb"
         ZOOKEEPER_STORAGE_VOLUME="c:/zookeeper"
         KAFKA_STORAGE_VOLUME="c:/kafka"
         ;;
     *)
-        echo "Machine invalid or not found"
+        echo "Host invalid or not found"
         exit 1
         ;;
 esac
