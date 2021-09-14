@@ -1,2 +1,3 @@
 #!/usr/bin/env bash
-rm -fR /c/zookeeper/*
+. library.sh
+rm -fR $ZOOKEEPER_STORAGE_VOLUME/*

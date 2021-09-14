@@ -1,2 +1,3 @@
 #!/usr/bin/env bash
-docker stop kafka
+. library.sh
+docker stop $KAFKA_CONTAINER_NAME

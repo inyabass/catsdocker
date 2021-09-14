@@ -1,2 +1,3 @@
 #!/usr/bin/env bash
-docker stop zookeeper
+. library.sh
+docker stop $ZOOKEEPER_CONTAINER_NAME

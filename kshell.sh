@@ -1,2 +1,3 @@
 #!/usr/bin/env bash
-docker exec -it kafka bash
+. library.sh
+docker exec -it $KAFKA_CONTAINER_NAME bash
