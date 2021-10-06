@@ -1,0 +1,20 @@
+CREATE TABLE `jobs` (
+  `guid` varchar(45) NOT NULL,
+  `requestor` varchar(45) NOT NULL,
+  `project` varchar(45) DEFAULT NULL,
+  `timeRequested` timestamp NOT NULL,
+  `tagExpression` varchar(256) NOT NULL,
+  `branch` varchar(45) DEFAULT NULL,
+  `configurationFile` varchar(256) DEFAULT NULL,
+  `reports` varchar(256) NOT NULL,
+  `emailTo` varchar(256) NOT NULL,
+  `teamKeys` varchar(256) DEFAULT NULL,
+  `status` varchar(45) DEFAULT NULL,
+  `statusMessage` varchar(256) NOT NULL,
+  `description` varchar(256) NOT NULL,
+  `resultJson` varchar(256) DEFAULT NULL,
+  `stdout` varchar(256) DEFAULT NULL,
+  `urls` varchar(256) DEFAULT NULL,
+  PRIMARY KEY (`guid`),
+  KEY `STATUS` (`status`) /*!80000 INVISIBLE */
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
