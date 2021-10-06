@@ -1,4 +1,4 @@
-CREATE TABLE `jobs` (
+CREATE TABLE `cats`.`jobs` (
   `guid` varchar(45) NOT NULL,
   `requestor` varchar(45) NOT NULL,
   `project` varchar(45) DEFAULT NULL,
