@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+. library.sh
+export SAUCE_USER
+export SAUCE_API_KEY
+export SAUCE_REGION
+export SAUCE_TUNNEL_IDENTIFIER
+export SAUCE_TUNNEL_NAME
+export SAUCE_SHARED_TUNNEL
+docker run -it -d --rm --name $SAUCETUNNEL_CONTAINER_NAME -p 4445:4445 -p 8032:8032 -e SAUCE_USER -e SAUCE_API_KEY -e SAUCE_REGION -e SAUCE_TUNNEL_IDENTIFIER -e SAUCE_TUNNEL_NAME -e SAUCE_SHARED_TUNNEL saucelabs/sauce-connect:latest
